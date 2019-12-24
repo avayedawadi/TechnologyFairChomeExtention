@@ -1,0 +1,16 @@
+{
+    "name": "Recipie Manager",
+    "manifest_version": 2,
+    "version": "1.0",
+    "description": "Helps you manage your recipits, so you don't ever make the same bad thing twice!",
+    "icons": {
+    },
+    "background": {
+      "persistent": true,
+      "scripts": ["background_script.js"]
+    },
+    "permissions": ["https://*/", "activeTab", "storage"],
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+  }
