@@ -1,13 +1,22 @@
 window.onload = function() {
     url = window.location.href;
-    
-    var dataObj = {};
-    dataObj[url] = "";
+    title = win
 
-    chrome.storage.sync.get(dataObj, function(result) {
-        var res = result[url];
-        if(res == "good" || res == "bad") {
-            alert("You through that this website was " + res)
-        }
+    chrome.storage.sync.get(["master"], function(result) {
+        var res = result["master"];
+        // TODO: Parse the data and check to see if a judgement has been passed, or if there is a similar recipie
+
+        // First figure out if a judgmenet has been passed already.
+        var resArry = res.split("&&");
+        resArry.forEach(element => {
+            if (element.includes(url)) {
+                if (element.includes("good")) {
+                    // element good
+                }
+                else {
+                    // element bad
+                }
+            }
+        });
     });
 }
