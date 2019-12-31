@@ -1,6 +1,37 @@
 .realBody {
     width: 200px;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 .buttn {
     display:inline-block;
+    background-color: blue;
+    color: black;
+    background: transparent;
+    border: 2px solid #0099cc;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+    padding: 3px;
+    margin: 3px;
+    text-align: center;
+}
+
+.buttn:hover{
+    background-color: #0099cc;
+    color: white;
+}
+
+.buttn:active{
+    background-color:#0099cc;
+    box-shadow: 0 3px #666666;
+    transform: translateY(-2px);
+
+}
+
+h1{
+    text-align: center;
+}
+
+.buttonDiv{
+    text-align: center;
 }
