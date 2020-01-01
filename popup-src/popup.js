@@ -1,5 +1,7 @@
 window.onload = function(){ 
     document.getElementById("badRecipie").onclick = function() {
+        var popup = document.getElementById("badPopup");
+        popup.classList.toggle("show");
         chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
             // Get the name of the url
             url = tabs[0].url;
@@ -38,6 +40,8 @@ window.onload = function(){
     };
     
     document.getElementById("goodRecipie").onclick = function() {
+        var popup = document.getElementById("goodPopup");
+        popup.classList.toggle("show");
         chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
             // Get the name of the url
             url = tabs[0].url;

@@ -4,7 +4,6 @@
     "version": "0.1",
     "description": "Helps you manage your recipies, so you don't ever make the same bad thing twice!",
     "icons": {
-
     },
     "content_scripts": [
       {
@@ -14,8 +13,10 @@
         "js": ["content.js"]
       }
     ],
-    "permissions": ["<all_urls>", "tabs", "storage"],
+    "permissions": ["<all_urls>", "tabs", "storage", "activeTab", "notifications"],
     "browser_action": {
         "default_popup": "popup.html"
-    }
+    },
+    "web_accessible_resources": ["Sausage.jpg"]
+
   }
