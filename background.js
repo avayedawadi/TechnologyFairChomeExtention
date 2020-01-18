@@ -5,7 +5,7 @@ chrome.runtime.onMessage.addListener(
             type: "basic",
             title: "Good Recipe",
             message: "You have previously saved this as a good recipe",
-            iconUrl: "Sausage.jpg"
+            iconUrl: "thumbsUp.jpg"
         }
         chrome.notifications.create(goodNotif);
       } else {
@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener(
             type: "basic",
             title: "Bad Recipe",
             message: "You have previously saved this as a bad recipe",
-            iconUrl: "Sausage.jpg"
+            iconUrl: "thumbsUp.jpg"
         }
         chrome.notifications.create(badNotif);
       }
