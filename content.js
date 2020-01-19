@@ -13,7 +13,8 @@ window.onload = function() {
                 if (element.includes(url)) {
                     if (element.includes("good")) {
                         // element good
-                        alert("Previously selected as good recipe");
+                        //alert("Previously selected as good recipe");
+                        chrome.extension.sendMessage({greeting: "good"}, function(response) {});
                         /*var goodNotif = {
                             type: "basic",
                             title: "Good Recipe",
@@ -24,7 +25,8 @@ window.onload = function() {
                     }
                     else {
                         // element bad
-                        alert("Previously selected as bad recipe");
+                        chrome.extension.sendMessage({greeting: "good"}, function(response) {});
+                        //alert("Previously selected as bad recipe");
                     }
                 }
             });

@@ -68,6 +68,13 @@ h1{
     color: black;
   }
 
+.good {
+  background-color: rgb(33, 201, 27);
+}
+.bad {
+  background-color: rgb(124, 5, 5);
+}
+
   /* Popup container */
 .popup {
     position: relative;
@@ -79,7 +86,7 @@ h1{
   .popup .popuptext {
     visibility: hidden;
     width: 160px;
-    background-color: rgb(33, 201, 27);
+    /*background-color: rgb(33, 201, 27);*/
     color: #fff;
     text-align: center;
     border-radius: 6px;
@@ -121,5 +128,3 @@ h1{
     from {opacity: 0;}
     to {opacity:1 ;}
   }
-
-  
