@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener(
         type: "basic",
         title: "Bad Recipe",
         message: "You have previously saved this as a bad recipe",
-        iconUrl: "thumbsUp.jpg"
+        iconUrl: "thumbsDown.jpg"
       }
       chrome.notifications.create(badNotif);
     }

@@ -14,7 +14,7 @@ window.onload = function () {
                 else {
                     el[1] = "You thought this recipe was bad"
                 }
-                TotalString += ("<tr><td>" + el[2].substring(1, el[2].length - 1) + "</td><td>" + el[1] + "</td><td>" + el[0].substring(1, el[0].length - 1) + "</td><td><div class='remove' id=\"" + el[0] + "\">X</div></td></tr>");
+                TotalString += ("<tr><td>" + el[2].substring(1, el[2].length - 1) + "</td><td>" + el[1] + "</td><td>" + el[0].substring(1, el[0].length - 1) + "</td><td><div class='remove' id=\"" + el[0] + "\")>X</div></td></tr>")
             });
         }
         document.getElementById("managementTable").innerHTML = TotalString;
@@ -22,19 +22,33 @@ window.onload = function () {
 
 };
 
-function remove(URL) {
-    chrome.storage.sync.get(["master"]), function (result) {
-        var res = result["master"];
-        var resArry = res.split("&&");
-        var returnArray = "";
-        array.forEach(element => {
-            if (!element.includes(URL)) {
-                returnArray += (element + "&&");
-            }
+$(document).ready(function () {
+    $(function () {
+        $('div').click(function () {
+            if ($(this).attr('id') != undefined) {
+                if ($(this).attr('id').includes("http://") || $(this).attr('id').includes("https://")) {
+                    var URL = $(this).attr('id');
+                    chrome.storage.sync.get(["master"], function (result) {
+                        var res = result["master"];
+                        var resArry = res.split("&&");
+                        var returnArray = "";
+                        resArry.forEach(element => {
+                            if (!element.includes(URL)) {
+                                returnArray += (element + "&&");
+                            }
+                        });
+                        returnArray = returnArray.substring(0, returnArray.length - 2);
+                        if(returnArray=="") {
+                            chrome.storage.sync.remove(["master"]);
+                        } else {
+                        var dataObj = {};
+                        dataObj["master"] = returnArray;
+                        chrome.storage.sync.set(dataObj, function () { });
+                        }
+                        location.reload();
+                    })
+                }
+            };
         });
-        returnArray.substring(0, returnArray.length - 2);
-        var dataObj = {};
-        dataObj["master"] = returnArray;
-        chrome.storage.sync.set(dataObj, function () { });
-    }
-}
+    });
+});

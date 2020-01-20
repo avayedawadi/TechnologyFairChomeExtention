@@ -48,6 +48,7 @@ table {
 .remove:hover{
     background-color: red;
     color: white;
+    cursor: pointer;
 }
 
 .remove:active{
