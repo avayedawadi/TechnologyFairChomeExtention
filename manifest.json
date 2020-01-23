@@ -3,8 +3,9 @@
   "manifest_version": 2,
   "version": "0.1",
   "description": "Helps you manage your recipes, so you don't ever make the same bad thing twice!",
-  "icons": {
-  },
+  "icons": { "16": "spoon.png",
+    "48": "spoon.png",
+   "128": "spoon.png" },
   "content_scripts": [
     {
       "matches": [
