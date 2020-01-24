@@ -1,7 +1,7 @@
 window.onload = function () {
     chrome.storage.sync.get(["master"], function (result) {
         var res = result["master"];
-        var TotalString = "<tr><th>Recipie Title</th><th>Liked Recipie?</th><th>URL</th><th>Delete?</th></tr>";
+        var TotalString = "<tr><th>Recipe Title</th><th>Liked Recipe?</th><th>URL</th><th>Delete?</th></tr>";
         if (res != undefined) {
             var resArry = res.split("&&");
             // Array split into parts
