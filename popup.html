@@ -6,13 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="popup-src/popup.js"></script>
     <link rel="stylesheet" href="popup-css/popup.css">
-    <title>Recipie Marker</title>
+    <title>Recipe Marker</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="realBody"></div>
-        <h1>How was this recipie?</h1>
-        <button id="goodRecipie" class="buttn">I liked it!</button>
-        <button id="badRecipie" class="buttn">I didn't like it.</button>
+    <div class="realBody">
+        <div>
+            <h1>How is this recipe?</h1>
+            <div class="buttonDiv">
+                <div class="popup">
+                    <span class="popuptext good" id="goodPopup">Good Recipe Selected</span>
+                    <span class="popuptext bad" id ="badPopup">Bad Recipe Selected</span>
+                  </div>
+                <button id="goodRecipie" class="buttn">Good</button>
+                <button id="badRecipie" class="buttn">Bad</button>
+                <button id="manager" class="buttn buttonDiv">Manage Recipes</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>

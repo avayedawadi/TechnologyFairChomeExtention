@@ -1,16 +1,25 @@
 {
-    "name": "Recipie Manager",
-    "manifest_version": 2,
-    "version": "0.1",
-    "description": "Helps you manage your recipies, so you don't ever make the same bad thing twice!",
-    "icons": {
-    },
-    "background": {
-      "persistent": true,
-      "scripts": ["background_script.js"]
-    },
-    "permissions": ["https://*/", "activeTab", "storage"],
-    "browser_action": {
-        "default_popup": "popup.html"
+  "name": "Recipe Manager",
+  "manifest_version": 2,
+  "version": "0.1",
+  "description": "Helps you manage your recipes, so you don't ever make the same bad thing twice!",
+  "icons": { "16": "spoon.png",
+    "48": "spoon.png",
+   "128": "spoon.png" },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
     }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "permissions": ["<all_urls>", "tabs", "storage", "activeTab", "notifications"],
+  "browser_action": {
+      "default_popup": "popup.html"
   }
+}
